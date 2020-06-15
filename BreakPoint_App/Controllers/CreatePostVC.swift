@@ -11,26 +11,42 @@ import Firebase
 
 class CreatePostVC: UIViewController {
 
+    @IBOutlet weak var butview: UIView!
+    @IBOutlet weak var profileView: UIImageView!
+    
     @IBOutlet weak var emailLbl: UILabel!
-   
     @IBOutlet weak var sendBtn: UIButton!
-    @IBOutlet weak var postTxtView: UITextView!
-    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        textView.delegate = self
+        butview.bindToKeyboard()
+        //sendBtn.bindToKeyboard()
+        //textView.bindToKeyboard()
+       // profileView.bindToKeyboard()
+       // emailLbl.bindToKeyboard()
+        
     }
     
-    @IBAction func closerBtnWasPRessed(_ sender: Any) {
+   
+    @IBAction func closeBtnWasPressed(_ sender: Any) {
+        print("closer button was pressed")
         dismiss(animated: true, completion: nil)
     }
     
+    
+    
     @IBAction func sendBtnWasPressed(_ sender: Any) {
-        if postTxtView.text != nil && postTxtView.text != "Say something here..." {
+        if textView != nil && textView.text != "Say something here...." {
+            print("send button enable false")
             sendBtn.isEnabled = false
-            DataService.instance.uploadPost(withmessage: postTxtView.text, forUID: Auth.auth().currentUser!.uid, withGroupKey: nil) { (isComplete) in
+            DataService.instance.uploadPost(withmessage: textView.text, forUID: Auth.auth().currentUser!.uid, withGroupKey: nil) { (isComplete) in
                 if isComplete {
+                    print("is completer true")
                     self.sendBtn.isEnabled = true
                     self.dismiss(animated: true, completion: nil)
                 }
@@ -42,9 +58,11 @@ class CreatePostVC: UIViewController {
             
         }
     }
+    
+    
 }
 extension CreatePostVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        postTxtView.text = ""
+        textView.text = ""
     }
 }
