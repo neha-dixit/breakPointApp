@@ -25,14 +25,14 @@ class CreatePostVC: UIViewController {
         // Do any additional setup after loading the view.
         textView.delegate = self
         butview.bindToKeyboard()
-        //sendBtn.bindToKeyboard()
-        //textView.bindToKeyboard()
-       // profileView.bindToKeyboard()
-       // emailLbl.bindToKeyboard()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.emailLbl.text = Auth.auth().currentUser?.email
         
     }
     
-   
     @IBAction func closeBtnWasPressed(_ sender: Any) {
         print("closer button was pressed")
         dismiss(animated: true, completion: nil)
@@ -44,7 +44,7 @@ class CreatePostVC: UIViewController {
         if textView != nil && textView.text != "Say something here...." {
             print("send button enable false")
             sendBtn.isEnabled = false
-            DataService.instance.uploadPost(withmessage: textView.text, forUID: Auth.auth().currentUser!.uid, withGroupKey: nil) { (isComplete) in
+            DataService.instance.uploadPost(withMessage: textView.text, forUID: Auth.auth().currentUser!.uid, withGroupKey: nil) { (isComplete) in
                 if isComplete {
                     print("is completer true")
                     self.sendBtn.isEnabled = true
