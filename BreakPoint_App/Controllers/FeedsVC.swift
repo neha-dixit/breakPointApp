@@ -29,7 +29,7 @@ class FeedsVC: UIViewController {
     }
     
     @IBAction func createPostbtnPressed(_ sender: Any) {
-       let vc = (storyboard?.instantiateViewController(withIdentifier: "CreatePostVC"))!
+       let vc = (storyboard?.instantiateViewController(withIdentifier: "createPostVC"))!
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }

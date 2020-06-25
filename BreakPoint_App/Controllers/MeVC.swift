@@ -21,6 +21,7 @@ class MeVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+        //print("MEVC view will appear")
     self.emailLbl.text = Auth.auth().currentUser?.email
     }
     @IBAction func signOutBtnWasPressed(_ sender: Any) {
@@ -29,6 +30,7 @@ class MeVC: UIViewController {
             do {
                 try Auth.auth().signOut()
                 let authVC = self.storyboard?.instantiateViewController(withIdentifier: "AuthVC") as? AuthVC
+                authVC?.modalPresentationStyle = .fullScreen
                 self.present(authVC!, animated: true, completion: nil)
             } catch { print(error)
                 

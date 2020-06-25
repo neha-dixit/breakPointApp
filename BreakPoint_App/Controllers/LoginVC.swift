@@ -39,6 +39,7 @@ class LoginVC: UIViewController {
                         AuthService.instance.loginUser(email: self.emailField.text!, andPassword: self.pwdField.text!) { (success, nil) in
                              
                             self.dismiss(animated: true, completion: nil)
+                            
                         print("Successfully registered user")
                     }
                     }

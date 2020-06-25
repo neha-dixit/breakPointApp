@@ -8,23 +8,21 @@
 
 import UIKit
 import Firebase
-
+import IQKeyboardManagerSwift
 class CreatePostVC: UIViewController {
 
     @IBOutlet weak var butview: UIView!
-    @IBOutlet weak var profileView: UIImageView!
-    
+    @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var msgTextView: UITextView!
     @IBOutlet weak var sendBtn: UIButton!
-    
-    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        textView.delegate = self
+        msgTextView.delegate = self
+       //sendBtn.bindToKeyboard()
         butview.bindToKeyboard()
+        IQKeyboardManager.shared.enable = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,24 +32,24 @@ class CreatePostVC: UIViewController {
     }
     
     @IBAction func closeBtnWasPressed(_ sender: Any) {
-        print("closer button was pressed")
+    print("closer button was pressed")
         dismiss(animated: true, completion: nil)
     }
     
     
     
     @IBAction func sendBtnWasPressed(_ sender: Any) {
-        if textView != nil && textView.text != "Say something here...." {
+        if msgTextView != nil && msgTextView.text != "Say something here...." {
             print("send button enable false")
             sendBtn.isEnabled = false
-            DataService.instance.uploadPost(withMessage: textView.text, forUID: Auth.auth().currentUser!.uid, withGroupKey: nil) { (isComplete) in
+            DataService.instance.uploadPost(withMessage: msgTextView.text, forUID: Auth.auth().currentUser!.uid, withGroupKey: nil) { (isComplete) in
                 if isComplete {
                     print("is completer true")
                     self.sendBtn.isEnabled = true
                     self.dismiss(animated: true, completion: nil)
                 }
                 else {
-                    self.sendBtn.isEnabled = true
+                    self.sendBtn.isEnabled = false
                     print("There is an error while sending the message from CReateVC")
                 }
             }
@@ -63,6 +61,6 @@ class CreatePostVC: UIViewController {
 }
 extension CreatePostVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.text = ""
+        msgTextView.text = ""
     }
 }
