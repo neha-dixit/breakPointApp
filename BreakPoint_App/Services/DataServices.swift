@@ -45,7 +45,7 @@ class DataService {
             for user in userSnapshot {
                 //print(user)
                 if user.key == uid {
-                    //print("hi username ",user.childSnapshot(forPath: "email"))
+                    print("hi username ",user.childSnapshot(forPath: "email"))
                     handler(user.childSnapshot(forPath: "email").value as! String)
                 }
             }
@@ -61,6 +61,22 @@ class DataService {
             REF_FEED.childByAutoId().updateChildValues(["content": message, "senderId": uid])
             
             sendComplete(true)
+        }
+    }
+    
+    func uploadImageURl(imageurl imageurl: String){
+        REF_USERS.observe((.value)) { (profileSnapshot) in
+            guard let profileSnapshot = profileSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for user in profileSnapshot {
+                if imageurl != "" {
+                    //self.REF_USERS.childByAutoId().updateChildValues(["ProfileImageUrl" : imageurl])
+                    self.REF_USERS.child(Auth.auth().currentUser!.uid).updateChildValues(["ProfileImageUrl" : imageurl])
+                    print("imageurl")
+                }
+                else {
+                    
+                }
+            }
         }
     }
     
@@ -107,6 +123,7 @@ class DataService {
             handler(emailArray)
         }
     }
+    
     func getIds(forUsernames usernames:[String], handler: @escaping (_ uiDArray: [String]) -> ()){
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
             guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }

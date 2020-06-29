@@ -15,7 +15,7 @@ class AuthService {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             guard let user = user else { userCreationComplete(false, error); return }
         
-            let userData = ["provider": user.user.providerID, "email": user.user.email]
+            let userData = ["provider": user.user.providerID, "email": user.user.email, "ProfileImageUrl": ""]
             DataService.instance.createDBUser(uid: user.user.uid, userData: userData)
         }
     }
@@ -28,4 +28,5 @@ class AuthService {
         }
         
     }
+    
 }

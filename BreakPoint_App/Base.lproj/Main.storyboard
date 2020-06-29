@@ -178,15 +178,31 @@
                                         <color key="textColor" red="0.015686274510000001" green="0.6705882353" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-8P-p0z">
+                                        <rect key="frame" x="125" y="197" width="125" height="32"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="TJF-s3-1na"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <state key="normal" title="upload Image"/>
+                                        <connections>
+                                            <action selector="uploadImgeBtnWasPressed:" destination="VWM-a1-d8Q" eventType="touchUpInside" id="QVE-7l-Kyh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="275" id="1Ag-vL-hH2"/>
+                                    <constraint firstItem="IaV-8P-p0z" firstAttribute="leading" secondItem="dON-Vy-E7O" secondAttribute="leading" constant="125" id="AZX-la-W3P"/>
                                     <constraint firstItem="FWn-5J-b8l" firstAttribute="top" secondItem="dON-Vy-E7O" secondAttribute="top" constant="40" id="BsL-SH-26V"/>
                                     <constraint firstItem="ajZ-fl-KBd" firstAttribute="leading" secondItem="dON-Vy-E7O" secondAttribute="leading" constant="65" id="DQK-W4-Z06"/>
                                     <constraint firstItem="ajZ-fl-KBd" firstAttribute="centerX" secondItem="dON-Vy-E7O" secondAttribute="centerX" id="IFs-tv-olD"/>
+                                    <constraint firstItem="IaV-8P-p0z" firstAttribute="top" secondItem="ajZ-fl-KBd" secondAttribute="bottom" constant="8.3333333333333428" id="RoL-i4-i27"/>
                                     <constraint firstItem="ajZ-fl-KBd" firstAttribute="top" secondItem="FWn-5J-b8l" secondAttribute="bottom" constant="30" id="bKN-vG-X4K"/>
+                                    <constraint firstAttribute="trailing" secondItem="IaV-8P-p0z" secondAttribute="trailing" constant="125" id="bQk-7A-R1m"/>
                                     <constraint firstAttribute="trailing" secondItem="ajZ-fl-KBd" secondAttribute="trailing" constant="65" id="bW1-PR-GW2"/>
+                                    <constraint firstItem="IaV-8P-p0z" firstAttribute="centerX" secondItem="dON-Vy-E7O" secondAttribute="centerX" id="h49-ys-dqw"/>
                                     <constraint firstItem="FWn-5J-b8l" firstAttribute="centerX" secondItem="dON-Vy-E7O" secondAttribute="centerX" id="ioj-fH-xwQ"/>
                                 </constraints>
                             </view>

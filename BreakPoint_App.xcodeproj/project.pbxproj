@@ -39,7 +39,6 @@
 /* Begin PBXFileReference section */
 		2DF74BA09EBF450484D155FC /* Pods_BreakPoint_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPoint_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		524A7879249315680057F6EE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = BreakPoint_App/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
-		524DE9052492669600A102C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5277BD7C248F6C6D00728C63 /* BreakPoint_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakPoint_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5277BD7F248F6C6D00728C63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5277BD83248F6C6D00728C63 /* FeedsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsVC.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		52A6AD70249E07280095D551 /* AddGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupVC.swift; sourceTree = "<group>"; };
 		52A6AD72249E27310095D551 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		52B708CA24A4C8EA00C14E53 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		52D2FB1D24A600BB0043FC4E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D14A088933AD46F8D7D46948 /* Pods-BreakPoint_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPoint_App.debug.xcconfig"; path = "Target Support Files/Pods-BreakPoint_App/Pods-BreakPoint_App.debug.xcconfig"; sourceTree = "<group>"; };
 		FBA504FFF821F8825BA70CC5 /* Pods-BreakPoint_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPoint_App.release.xcconfig"; path = "Target Support Files/Pods-BreakPoint_App/Pods-BreakPoint_App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,8 +112,8 @@
 				524A7879249315680057F6EE /* SceneDelegate.swift */,
 				5277BD87248F6C6D00728C63 /* Main.storyboard */,
 				5277BD8A248F6C7400728C63 /* Assets.xcassets */,
+				52D2FB1D24A600BB0043FC4E /* Info.plist */,
 				5277BD8C248F6C7400728C63 /* LaunchScreen.storyboard */,
-				524DE9052492669600A102C5 /* Info.plist */,
 				5277BD9C248F6F0100728C63 /* GoogleService-Info.plist */,
 			);
 			path = BreakPoint_App;
